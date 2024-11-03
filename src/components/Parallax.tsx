@@ -2,6 +2,7 @@
 import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,14 +68,14 @@ function Parallax({ title }: any) {
         }}
         className="parallax"
       >
-        <img ref={mountain3} className="mountain-3" src="/parallax/mountain-3.svg" />
-        <img ref={mountain2} className="mountain-2" src="/parallax/mountain-2.svg" />
-        <img ref={mountain1} className="mountain-1" src="/parallax/mountain-1.svg" />
-        <img ref={sun} className="sun" src="/parallax/sun.svg" />
-        <img ref={cloudsBottom} className="clouds-bottom" src="/parallax/cloud-bottom.svg" />
-        <img ref={cloudsLeft} className="clouds-left" src="/parallax/clouds-left.svg" />
-        <img ref={cloudsRight} className="clouds-right" src="/parallax/clouds-right.svg" />
-        <img ref={stars} className="stars" src="/parallax/stars.svg" />
+        <Image ref={mountain3} className="mountain-3" src="/parallax/mountain-3.svg" alt="Mountain"/>
+        <Image alt="image" ref={mountain2} className="mountain-2" src="/parallax/mountain-2.svg" />
+        <Image alt="image" ref={mountain1} className="mountain-1" src="/parallax/mountain-1.svg" />
+        <Image alt="image" ref={sun} className="sun" src="/parallax/sun.svg" />
+        <Image alt="image" ref={cloudsBottom} className="clouds-bottom" src="/parallax/cloud-bottom.svg" />
+        <Image alt="image" ref={cloudsLeft} className="clouds-left" src="/parallax/clouds-left.svg" />
+        <Image alt="image" ref={cloudsRight} className="clouds-right" src="/parallax/clouds-right.svg" />
+        <Image alt="image" ref={stars} className="stars" src="/parallax/stars.svg" />
         <div ref={copy} className="copy">
           <h1>{title}</h1>
           <span ref={btn}>Discover more</span>
