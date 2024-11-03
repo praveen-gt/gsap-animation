@@ -67,14 +67,60 @@ function Parallax({ title }: ParallaxProps) {
         }}
         className="parallax"
       >
-        <Image ref={mountain3} className="mountain-3" src="/parallax/mountain-3.svg" alt="Mountain" />
-        <Image ref={mountain2} className="mountain-2" src="/parallax/mountain-2.svg" alt="Mountain" />
-        <Image ref={mountain1} className="mountain-1" src="/parallax/mountain-1.svg" alt="Mountain" />
-        <Image ref={sun} className="sun" src="/parallax/sun.svg" alt="Sun" />
-        <Image ref={cloudsBottom} className="clouds-bottom" src="/parallax/cloud-bottom.svg" alt="Clouds Bottom" />
-        <Image ref={cloudsLeft} className="clouds-left" src="/parallax/clouds-left.svg" alt="Clouds Left" />
-        <Image ref={cloudsRight} className="clouds-right" src="/parallax/clouds-right.svg" alt="Clouds Right" />
-        <Image ref={stars} className="stars" src="/parallax/stars.svg" alt="Stars" />
+        <Image
+          ref={mountain3}
+          className="mountain-3"
+          src="/parallax/mountain-3.svg"
+          height={0}
+          width={0}
+          style={{
+            height: 'auto',
+            width: '100%'
+          }}
+          alt="Mountain"
+        />
+        <Image ref={mountain2} className="mountain-2" src="/parallax/mountain-2.svg"  height={0}
+          width={0}
+          style={{
+            height: 'auto',
+            width: '100%'
+          }} alt="Mountain" />
+        <Image ref={mountain1} className="mountain-1" src="/parallax/mountain-1.svg"  height={0}
+          width={0}
+          style={{
+            height: 'auto',
+            width: '100%'
+          }} alt="Mountain" />
+        <Image ref={sun} className="sun" src="/parallax/sun.svg"  height={0}
+          width={0}
+          style={{
+            height: 'auto',
+            width: '40%'
+          }} alt="Sun" />
+        <Image ref={cloudsBottom} className="clouds-bottom" src="/parallax/cloud-bottom.svg"  height={0}
+          width={0}
+          style={{
+            height: 'auto',
+            width: '100%'
+          }} alt="Clouds Bottom" />
+        <Image ref={cloudsLeft} className="clouds-left" src="/parallax/clouds-left.svg"  height={0}
+          width={0}
+          style={{
+            height: 'auto',
+            width: '100%'
+          }} alt="Clouds Left" />
+        <Image ref={cloudsRight} className="clouds-right" src="/parallax/clouds-right.svg"  height={0}
+          width={0}
+          style={{
+            height: 'auto',
+            width: '100%'
+          }} alt="Clouds Right" />
+        <Image ref={stars} className="stars" src="/parallax/stars.svg"  height={0}
+          width={0}
+          style={{
+            height: 'auto',
+            width: '100%'
+          }} alt="Stars" />
         <div ref={copy} className="copy">
           <h1>{title}</h1>
           <span ref={btn}>Discover more</span>
