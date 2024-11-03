@@ -25,7 +25,7 @@ function Parallax({ title }: any) {
 
   useEffect(() => {
     if (!parallaxRef.current) return;
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       // gsap.registerPlugin(ScrollTrigger);
 
       const tl = gsap.timeline({
