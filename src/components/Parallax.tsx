@@ -1,4 +1,4 @@
-// components/Parallax.js
+// components/Parallax.tsx
 import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -6,29 +6,29 @@ import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Parallax({ title }: any) {
-  const [background, setBackground] = useState(20);
+interface ParallaxProps {
+  title: string;
+}
 
-  const parallaxRef = useRef(null);
-  const mountain3 = useRef(null);
-  const mountain2 = useRef(null);
-  const mountain1 = useRef(null);
-  const cloudsBottom = useRef(null);
-  const cloudsLeft = useRef(null);
-  const cloudsRight = useRef(null);
-  const stars = useRef(null);
-  const sun = useRef(null);
-  const copy = useRef(null);
-  const btn = useRef(null);
+function Parallax({ title }: ParallaxProps) {
+  const [background, setBackground] = useState<number>(20);
 
-  // Inside Parallax.js, adjust gsap animations to ensure correct timing
-
+  const parallaxRef = useRef<HTMLDivElement | null>(null);
+  const mountain3 = useRef<HTMLImageElement | null>(null);
+  const mountain2 = useRef<HTMLImageElement | null>(null);
+  const mountain1 = useRef<HTMLImageElement | null>(null);
+  const cloudsBottom = useRef<HTMLImageElement | null>(null);
+  const cloudsLeft = useRef<HTMLImageElement | null>(null);
+  const cloudsRight = useRef<HTMLImageElement | null>(null);
+  const stars = useRef<HTMLImageElement | null>(null);
+  const sun = useRef<HTMLImageElement | null>(null);
+  const copy = useRef<HTMLDivElement | null>(null);
+  const btn = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {
     if (!parallaxRef.current) return;
-    const ctx = gsap.context(() => {
-      // gsap.registerPlugin(ScrollTrigger);
 
+    const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: parallaxRef.current,
@@ -53,11 +53,10 @@ function Parallax({ title }: any) {
       tl.to(sun.current, { y: "+=210" }, 0);
       tl.to(copy.current, { y: "-250%", opacity: 1 }, 0);
       tl.to(btn.current, { opacity: 1 }, 1.1);
-
     });
+
     return () => ctx.revert();
   }, []);
-
 
   return (
     <div className="parallax-outer">
@@ -68,14 +67,14 @@ function Parallax({ title }: any) {
         }}
         className="parallax"
       >
-        <Image ref={mountain3} className="mountain-3" src="/parallax/mountain-3.svg" alt="Mountain"/>
-        <Image alt="image" ref={mountain2} className="mountain-2" src="/parallax/mountain-2.svg" />
-        <Image alt="image" ref={mountain1} className="mountain-1" src="/parallax/mountain-1.svg" />
-        <Image alt="image" ref={sun} className="sun" src="/parallax/sun.svg" />
-        <Image alt="image" ref={cloudsBottom} className="clouds-bottom" src="/parallax/cloud-bottom.svg" />
-        <Image alt="image" ref={cloudsLeft} className="clouds-left" src="/parallax/clouds-left.svg" />
-        <Image alt="image" ref={cloudsRight} className="clouds-right" src="/parallax/clouds-right.svg" />
-        <Image alt="image" ref={stars} className="stars" src="/parallax/stars.svg" />
+        <Image ref={mountain3} className="mountain-3" src="/parallax/mountain-3.svg" alt="Mountain" />
+        <Image ref={mountain2} className="mountain-2" src="/parallax/mountain-2.svg" alt="Mountain" />
+        <Image ref={mountain1} className="mountain-1" src="/parallax/mountain-1.svg" alt="Mountain" />
+        <Image ref={sun} className="sun" src="/parallax/sun.svg" alt="Sun" />
+        <Image ref={cloudsBottom} className="clouds-bottom" src="/parallax/cloud-bottom.svg" alt="Clouds Bottom" />
+        <Image ref={cloudsLeft} className="clouds-left" src="/parallax/clouds-left.svg" alt="Clouds Left" />
+        <Image ref={cloudsRight} className="clouds-right" src="/parallax/clouds-right.svg" alt="Clouds Right" />
+        <Image ref={stars} className="stars" src="/parallax/stars.svg" alt="Stars" />
         <div ref={copy} className="copy">
           <h1>{title}</h1>
           <span ref={btn}>Discover more</span>
