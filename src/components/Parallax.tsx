@@ -107,13 +107,13 @@ function Parallax({ title }: ParallaxProps) {
           width={0}
           style={{
             height: 'auto',
-            width: '100%'
+            width: '20%'
           }} alt="Clouds Left" />
         <Image ref={cloudsRight} className="clouds-right" src="/parallax/clouds-right.svg"  height={0}
           width={0}
           style={{
             height: 'auto',
-            width: '100%'
+            width: '20%'
           }} alt="Clouds Right" />
         <Image ref={stars} className="stars" src="/parallax/stars.svg"  height={0}
           width={0}
